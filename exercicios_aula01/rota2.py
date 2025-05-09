@@ -36,9 +36,9 @@ def main(page: ft.Page):
                     [
                         AppBar(title=Text("Inicio"), bgcolor=Colors.SECONDARY_CONTAINER),
                         Text(value=f'Titulo: {titulo.value}'),
-                        Text(value=f'Descrição: {titulo.value}'),
+                        Text(value=f'Descrição: {descricao.value}'),
                         Text(value=f'Categoria: {categoria.value}'),
-                        Text(value=f'Autor: {categoria.value}'),
+                        Text(value=f'Autor: {autor.value}'),
                     ],
                 )
             )

@@ -39,7 +39,15 @@ def main(page: ft.Page):
         lv_nome.controls.clear()
         for user in lista:
             lv_nome.controls.append(
-                ft.Text(value=f"{user.titulo}, {user.autor}"),
+                ft.Card(
+                    content=ft.Container(
+                        content=ft.Column([
+                            Text(f"Título: {user.titulo}"),
+                            Text(f"Autor: {user.autor}"),
+                        ]
+                        )
+                    )
+                )
             )
             page.update()
 
@@ -67,7 +75,7 @@ def main(page: ft.Page):
                 View(
                     "/segunda",
                     [
-                        AppBar(title=Text("Segunda tela"), bgcolor=Colors.SECONDARY_CONTAINER),
+                        AppBar(title=Text("Exibir lista"), bgcolor=Colors.SECONDARY_CONTAINER),
                         lv_nome,
 
                     ],
@@ -81,7 +89,7 @@ def main(page: ft.Page):
         page.go(top_view.route)
 
     # Componentes
-    titulo_livro = ft.TextField(label="Titulo", hint_text="Digite o Titulo do livro")
+    titulo_livro = ft.TextField(label="Título", hint_text="Digite o titulo do livro")
     autor_livro = ft.TextField(label="Autor", hint_text="Digite a autor do livro")
 
     msg_sucesso = ft.SnackBar(
@@ -90,7 +98,7 @@ def main(page: ft.Page):
     )
 
     msg_erro = ft.SnackBar(
-        content=ft.Text("Erro, esta vazio"),
+        content=ft.Text("Erro, está vazio"),
         bgcolor=Colors.RED
     )
 
