@@ -8,6 +8,7 @@ class User():
         self.cargo = cargo
         self.salario = salario
 
+
 def main(page: ft.Page):
     # Configurações
     page.title = "Exemplo de Rotas"
